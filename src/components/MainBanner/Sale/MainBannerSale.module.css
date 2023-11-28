@@ -1,0 +1,30 @@
+.saleText {
+  font-weight: 700;
+}
+
+.btn {
+  font-weight: 700;
+}
+
+.mainBlock {
+  background-image: url('./img/Clothes/Hoodies/Hoodie-gray-main-half.png'); 
+  background-size: 340px 600px;
+  background-repeat: no-repeat;
+  background-position: 0;
+}
+
+@media only screen and (max-width:780px) {
+  .mainBlock {
+    height: 408px !important;
+    background-image: url('./img/Clothes/Hoodies/Hoodie-gray-main-half.png'); 
+    background-size: 340px 600px;
+    background-repeat: no-repeat;
+    background-position: 0 110px;
+    max-width: 100% !important;
+  }
+
+  .titleBlock {
+    display: block !important;
+  }
+}
+
