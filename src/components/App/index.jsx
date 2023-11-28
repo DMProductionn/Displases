@@ -5,6 +5,7 @@ import Header from '../Header';
 import Category from '../Category';
 import BannerSale from '../MainBanner/Sale';
 import BannerNewCol from '../MainBanner/NewCol';
+import Footer from '../Footer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <BannerNewCol />
         </div>
       </div>
+      <Footer />
     </>
   );
 }
