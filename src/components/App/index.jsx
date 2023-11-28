@@ -3,9 +3,8 @@ import './App.css';
 // cjjd
 import Header from '../Header';
 import Category from '../Category';
-import BannerSale from '../MainBanner/Sale';
-import BannerNewCol from '../MainBanner/NewCol';
 import Footer from '../Footer';
+import Home from '../../pages/Home';
 
 function App() {
   return (
@@ -13,10 +12,7 @@ function App() {
       <Header />
       <div className="wrapper max-w-[1270px] m-auto px-[35px]">
         <Category />
-        <div className={`banners flex gap-[30px] justify-center`}>
-            <BannerSale />
-            <BannerNewCol />
-        </div>
+        <Home />
       </div>
       <Footer />
     </>

@@ -49,7 +49,7 @@ export default function BannerNewCol() {
         </div>
         <img
           width={350}
-          className="absolute right-0 bottom-0 rounded-[6px]"
+          className="absolute right-0 bottom-0 rounded-[12px]"
           src="./img/elipse-gray.png"
           alt="elipse"
         />

@@ -50,7 +50,7 @@ export default function BannerSale() {
         </div>
         <img
           width={350}
-          className="absolute right-0 bottom-0 rounded-[6px]"
+          className="absolute right-0 bottom-0 rounded-[12px]"
           src="./img/elipse-red.png"
           alt="elipse"
         />

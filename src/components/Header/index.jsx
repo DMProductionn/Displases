@@ -2,6 +2,7 @@ import React from 'react'
 
 export default function Header() {
   return (
+    <header>
     <div className='mb-[15px] p-[15px]'>
       <div className='flex items-center justify-between'>
         <img className='cursor-pointer' width={32} height={32} src="./img/icons/logo/Logo.png" alt="logo" />
@@ -28,5 +29,6 @@ export default function Header() {
         </div>
       </div>
     </div>
+    </header>
   )
 }
