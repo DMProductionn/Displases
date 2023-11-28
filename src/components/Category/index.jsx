@@ -3,7 +3,7 @@ import './Category.css'
 
 export default function Category() {
   return (
-    <div className={`flex flex-wrap gap-[15px] justify-center mb-[15px]`}>
+    <div className={`md:flex hidden flex-wrap gap-[15px] justify-center mb-[15px]`}>
         <button className='p-[8px] min-w-[132px] bg-gray-main rounded-[6px] text-gray-text'>Верхняя одежда</button>
         <button className='p-[8px] min-w-[132px] bg-gray-main rounded-[6px] text-gray-text'>Лонгсливы</button>
         <button className='p-[8px] min-w-[132px] bg-gray-main rounded-[6px] text-gray-text'>Толстовки</button>
