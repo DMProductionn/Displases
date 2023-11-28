@@ -1,22 +1,25 @@
 import React from 'react';
+import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
 import './App.css';
-// cjjd
-import Header from '../Header';
-import Category from '../Category';
-import Footer from '../Footer';
+
 import Home from '../../pages/Home';
+import Layout from '../Layout';
+import Error from '../Error';
 
 function App() {
+
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path='/' element={<Layout />} errorElement={<Error />}>
+        <Route index element={<Home/>}/>
+      </Route>
+    )
+  );
+
   return (
     <>
-      <Header />
-      <div className="wrapper max-w-[1270px] m-auto px-[35px]">
-        <Category />
-        <Home />
-      </div>
-      <Footer />
+      <RouterProvider router = {router}/>
     </>
-  );
+  )
 }
-
-export default App;
+export default App
