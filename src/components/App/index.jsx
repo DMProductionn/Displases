@@ -4,7 +4,7 @@ import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } 
 import Layout from '../Layout/Layout';
 import Error from '../Error';
 
-export default function index() {
+function App() {
 
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -20,3 +20,4 @@ export default function index() {
     </>
   )
 }
+export default App
