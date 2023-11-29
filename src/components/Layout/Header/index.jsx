@@ -10,17 +10,17 @@ export default function Header() {
       <div className="mb-[15px] p-[15px]">
         <div className="flex items-center justify-between">
           <Link to='/'><img className='logo hidden cursor-pointer' src="./img/icons/logo/Logo.png" alt="logo" /></Link>
-          <div className='burger' id="menuToggle">
-            <input type="checkbox" />
+            <div className='burger' id="menuToggle">
+              <input type="checkbox" />
 
-            <span></span>
-            <span></span>
-            <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
 
-            <ul id="menu">
-              <CategoryBurger />
-            </ul>
-          </div>
+              <ul id="menu">             
+                  <CategoryBurger />
+              </ul>
+            </div>
           <svg
             className="ml-[185px] hidden md:block"
             xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +67,7 @@ export default function Header() {
               <li>
                 <Link to='/signup'>
                   <button className="bg-[#333232] rounded-[6px] min-w-[103px] min-h-[33px] text-[12px] text-[#fff]">
-                    Sign Up
+                    Sign up
                   </button>
                 </Link>
               </li>
@@ -77,6 +77,7 @@ export default function Header() {
                     Sign in
                   </button>
                 </Link>
+
               </li>
             </ul>
           </div>

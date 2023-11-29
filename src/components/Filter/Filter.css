@@ -1,0 +1,8 @@
+.filterPopup {
+  transition: all .2s ease-in-out;
+}
+
+.active {
+  transform: translateX(300px);
+}
+

@@ -23,7 +23,8 @@ export default {
     },
     colors: {
       'gray-main': '#1D1D1D',
-      'gray-text': '#929192'
+      'gray-text': '#929192',
+      'gray-light': '#333232'
     },
     fontFamily: {
       'Inter': ['Inter'],
