@@ -1,5 +1,7 @@
 import React from 'react';
 import './Header.css'
+import { Link } from 'react-router-dom';
+
 import CategoryBurger from '../Category/CategoryBurger';
 
 export default function Header() {
@@ -7,15 +9,15 @@ export default function Header() {
     <header>
       <div className="mb-[15px] p-[15px]">
         <div className="flex items-center justify-between">
-          <img className='hidden md:block' src="./img/icons/logo/Logo.png" alt="logo" />
-            <div className='md:hidden' id="menuToggle">
+          <Link to='/'><img className='logo hidden cursor-pointer' src="./img/icons/logo/Logo.png" alt="logo" /></Link>
+            <div className='burger' id="menuToggle">
               <input type="checkbox" />
 
               <span></span>
               <span></span>
               <span></span>
 
-              <ul id="menu">
+              <ul id="menu">             
                   <CategoryBurger />
               </ul>
             </div>

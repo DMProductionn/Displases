@@ -33,7 +33,7 @@ export default function BannerSale() {
           <p className={`text-[#F64343] text-[22px] text-[700] ${style.saleText}`}>-20%</p>
         </div>
         <div className="cursor-pointer absolute right-[20px] top-[20px] w-[160px] rounded-[6px] border-[1px] border-[#333232]">
-          <img width={160} height={140} src="./img/Clothes/Hoodies/Hoodie-gray-front.png" alt="" />
+          <img width={160} height={140} src="./img/Clothes/Hoodies/Hoodie-gray-front.webp" alt="" />
           <div className="p-[15px] pt-[6px]">
             <p className="text-[10px]">DISPLASES Hoodie SHTRIH in Gray</p>
             <div className="flex mt-[8px] gap-[5px]">

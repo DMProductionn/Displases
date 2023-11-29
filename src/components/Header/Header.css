@@ -1,8 +1,7 @@
 #menuToggle
 {
   border-top: 1px solid #333232;
-  top: 50px;
-  left: 50px;
+  position: absolute;
   z-index: 1;
   -webkit-user-select: none;
   user-select: none;
@@ -112,4 +111,14 @@
 #menuToggle input:checked ~ ul
 {
   transform: none;
+}
+
+@media only screen and (min-width:1231px) {
+  .logo {
+    display: block !important;
+  }
+
+  .burger {
+    display: none;
+  }
 }

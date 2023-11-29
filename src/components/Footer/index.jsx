@@ -14,7 +14,7 @@ export default function Footer() {
             <li><a href="#">Blog</a></li>
           </ul>
 
-          <ul className='flex flex-col gap-[8px] 2sm:ml-[70px]'>
+          <ul className='flex flex-col gap-[8px] 2sm:ml-[40px]'>
             <li>ABOUT US</li>
             <li><a href="#">Terms & Conditions</a></li>
             <li><a href="#">AML Policy</a></li>
@@ -33,7 +33,7 @@ export default function Footer() {
         <div className='flex flex-col justify-center items-center pt-[20px] pb-[50px]'>
           <img className='mb-[20px]' width={32} height={32} src="./img/icons/logo/Logo.png" alt="logo" />
           <p className='mb-[10px]'>© 2023 DISPLASES | All Rights Reserved.</p>
-          <p>By LoCocb and Maxim-web-dev</p>
+          <p>By LoCocb & Maxim-web-dev</p>
         </div>
       </footer>
     </>
