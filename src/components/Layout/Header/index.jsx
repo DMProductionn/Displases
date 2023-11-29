@@ -2,7 +2,7 @@ import React from 'react';
 import './Header.css'
 import { Link } from 'react-router-dom';
 
-import CategoryBurger from '../Category/CategoryBurger';
+import CategoryBurger from '../../Category/CategoryBurger';
 
 export default function Header() {
   return (
@@ -10,17 +10,17 @@ export default function Header() {
       <div className="mb-[15px] p-[15px]">
         <div className="flex items-center justify-between">
           <Link to='/'><img className='logo hidden cursor-pointer' src="./img/icons/logo/Logo.png" alt="logo" /></Link>
-            <div className='burger' id="menuToggle">
-              <input type="checkbox" />
+          <div className='burger' id="menuToggle">
+            <input type="checkbox" />
 
-              <span></span>
-              <span></span>
-              <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
 
-              <ul id="menu">             
-                  <CategoryBurger />
-              </ul>
-            </div>
+            <ul id="menu">
+              <CategoryBurger />
+            </ul>
+          </div>
           <svg
             className="ml-[185px] hidden md:block"
             xmlns="http://www.w3.org/2000/svg"
@@ -63,16 +63,20 @@ export default function Header() {
             />
           </svg>
           <div>
-            <ul className="flex gap-3 ">
+            <ul className="flex gap-3">
               <li>
-                <button className="bg-[#333232] rounded-[6px] min-w-[103px] min-h-[33px] text-[12px]">
-                  Sign Up
-                </button>
+                <Link to='/signup'>
+                  <button className="bg-[#333232] rounded-[6px] min-w-[103px] min-h-[33px] text-[12px] text-[#fff]">
+                    Sign Up
+                  </button>
+                </Link>
               </li>
               <li>
-                <button className="bg-[#fff] rounded-[6px] min-w-[103px] min-h-[33px] text-[#111] text-[12px]">
-                  Sign
-                </button>
+                <Link to='/signin'>
+                  <button className="bg-[#fff] rounded-[6px] min-w-[103px] min-h-[33px] text-[#111] text-[12px]">
+                    Sign in
+                  </button>
+                </Link>
               </li>
             </ul>
           </div>
