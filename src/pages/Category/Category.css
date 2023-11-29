@@ -1,0 +1,38 @@
+.wrapper {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+}
+
+
+
+
+
+
+/* media */
+
+ @media only screen and (max-width:768px) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+} 
+
+ @media only screen and (max-width:439px) {
+  .back {
+    order: 1 !important;
+  }
+  
+  .title {
+    order: 3;
+  }
+
+  .filterr {
+    order: 2 !important;
+  }
+
+}  
+
+@media only screen and (max-width:360px) {
+  .wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+} 

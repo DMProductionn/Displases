@@ -26,11 +26,11 @@ export default function BannerNewCol() {
             />
           </svg>
         </div>
-        <div className="absolute right-[20px] top-[20px] w-[160px] rounded-[6px] border-[1px] border-[#333232]">
+        <div className="cursor-pointer absolute right-[20px] top-[20px] w-[160px] rounded-[6px] border-[1px] border-[#333232]">
           <img
             width={160}
             height={140}
-            src="./img/Clothes/Longsleeves/Longsleeve-Front-black.png"
+            src="./img/Clothes/Longsleeves/Longsleeve-Front-black.webp"
             alt=""
           />
           <div className="p-[15px] pt-[6px]">
