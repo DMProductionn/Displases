@@ -63,16 +63,21 @@ export default function Header() {
             />
           </svg>
           <div>
-            <ul className="flex gap-3 ">
+            <ul className="flex gap-3">
               <li>
-                <button className="bg-[#333232] rounded-[6px] min-w-[103px] min-h-[33px] text-[12px]">
-                  Sign Up
-                </button>
+                <Link to='/signup'>
+                  <button className="bg-[#333232] rounded-[6px] min-w-[103px] min-h-[33px] text-[12px] text-[#fff]">
+                    Sign up
+                  </button>
+                </Link>
               </li>
               <li>
-                <button className="bg-[#fff] rounded-[6px] min-w-[103px] min-h-[33px] text-[#111] text-[12px]">
-                  Sign
-                </button>
+                <Link to='/signin'>
+                  <button className="bg-[#fff] rounded-[6px] min-w-[103px] min-h-[33px] text-[#111] text-[12px]">
+                    Sign in
+                  </button>
+                </Link>
+
               </li>
             </ul>
           </div>
