@@ -64,6 +64,7 @@ export default function Header() {
           </svg>
           <div>
             <ul className="flex gap-3">
+              
               <li>
                 <Link to='/signup'>
                   <button className="bg-[#333232] rounded-[6px] min-w-[103px] min-h-[33px] text-[12px] text-[#fff]">
@@ -71,6 +72,7 @@ export default function Header() {
                   </button>
                 </Link>
               </li>
+
               <li>
                 <Link to='/signin'>
                   <button className="bg-[#fff] rounded-[6px] min-w-[103px] min-h-[33px] text-[#111] text-[12px]">
