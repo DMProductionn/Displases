@@ -22,19 +22,19 @@ export default function Index() {
             <form className='w-[100%] flex flex-col flex-nowrap'>
                 <div className={style.info}>
                     <label className='w-[100%]'>
-                        <h3 className='font-[700]'>Email</h3>
+                        <h3 className='font-[700] mb-[5px]'>Email</h3>
                         <input type="email" name="" id="" className={style.input}/>
                     </label>
                     <label className='w-[100%]'>
-                        <h3 className='font-[700]'>Password</h3>
+                        <h3 className='font-[700] mb-[5px]'>Password</h3>
                         <input type="password" name="" id="" className={style.input}/>
                     </label>
                     <label className='w-[100%]'>
-                        <h3 className='font-[700]'>Repeat Password</h3>
+                        <h3 className='font-[700] mb-[5px]'>Repeat Password</h3>
                         <input type="password" name="" id="" className={style.input}/>
                     </label>
                     <label className='w-[100%]'>
-                        <h3 className='font-[700]'>Country
+                        <h3 className='font-[700] mb-[5px]'>Country
                             <span className='inline text-[#ff0000] float-none'>*</span>
                         </h3>
                         <select id="country" name="country" className='bg-[#111] w-[100%] h-[4.5vh] py-[4px] px-[8px] rounded-[6px] appearance-none'>
@@ -46,7 +46,7 @@ export default function Index() {
                         </select>
                     </label>
                     <label className='w-[100%]'>
-                        <h3 className='font-[700]'>Postal Code
+                        <h3 className='font-[700] mb-[5px]'>Postal Code
                             <span className='inline text-[#ff0000] float-none'>*</span>
                         </h3>
                         <input type="text" name="" id="" className={style.input}/>

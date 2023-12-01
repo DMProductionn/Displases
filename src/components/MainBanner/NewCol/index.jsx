@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './MainBannerNewCol.module.css';
+import { Link } from 'react-router-dom';
 
 export default function BannerNewCol() {
   return (
@@ -26,6 +27,8 @@ export default function BannerNewCol() {
             />
           </svg>
         </div>
+        {/* карточка баннера */}
+        <Link to='/view'>
         <div className="cursor-pointer absolute right-[20px] top-[20px] w-[160px] rounded-[6px] border-[1px] border-[#333232]">
           <img
             width={160}
@@ -41,6 +44,7 @@ export default function BannerNewCol() {
             </div>
           </div>
         </div>
+        </Link>
         <div className="mb-[20px] flex justify-center items-center">
           <button
             className={`uppercase absolute z-[15] bottom-[25px] cursor-pointer bg-[#333232] w-[103px] py-[8px] rounded-[6px] text-[12px] ${style.btn}`}>
