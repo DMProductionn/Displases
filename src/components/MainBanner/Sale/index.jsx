@@ -1,10 +1,12 @@
 import React from 'react';
 import style from './MainBannerSale.module.css';
+import { Link } from 'react-router-dom';
 
 export default function BannerSale() {
   return (
     <>
-      <div className={`relative py-[20px] h-[850px] max-w-[570px] rounded-[12px] w-full bg-[#1D1D1D] ${style.mainBlock}`}>
+      <div
+        className={`relative py-[20px] h-[850px] max-w-[570px] rounded-[12px] w-full bg-[#1D1D1D] ${style.mainBlock}`}>
         <div className={`flex items-center h-[30px] pl-[20px] ${style.titleBlock}`}>
           <svg
             className="mr-[5px]"
@@ -32,16 +34,24 @@ export default function BannerSale() {
           </svg>
           <p className={`text-[#F64343] text-[22px] text-[700] ${style.saleText}`}>-20%</p>
         </div>
-        <div className="cursor-pointer absolute right-[20px] top-[20px] w-[160px] rounded-[6px] border-[1px] border-[#333232]">
-          <img width={160} height={140} src="./img/Clothes/Hoodies/Hoodie-gray-front.webp" alt="" />
-          <div className="p-[15px] pt-[6px]">
-            <p className="text-[10px]">DISPLASES Hoodie SHTRIH in Gray</p>
-            <div className="flex mt-[8px] gap-[5px]">
-              <p className="text-[10px]">12 300р</p>
-              <p className="text-[#717171] line-through text-[10px]">15 500р</p>
+        {/* карточка баннера */}
+        <Link to="/view">
+          <div className="cursor-pointer absolute right-[20px] top-[20px] w-[160px] rounded-[6px] border-[1px] border-[#333232]">
+            <img
+              width={160}
+              height={140}
+              src="./img/Clothes/Hoodies/Hoodie-gray-front.webp"
+              alt=""
+            />
+            <div className="p-[15px] pt-[6px]">
+              <p className="text-[10px]">DISPLASES Hoodie SHTRIH in Gray</p>
+              <div className="flex mt-[8px] gap-[5px]">
+                <p className="text-[10px]">12 300р</p>
+                <p className="text-[#717171] line-through text-[10px]">15 500р</p>
+              </div>
             </div>
           </div>
-        </div>
+        </Link>
         <div className="mb-[20px] flex justify-center items-center">
           <button
             className={`uppercase absolute bottom-[25px] z-[15] cursor-pointer bg-[#333232] w-[103px] py-[8px] rounded-[6px] text-[12px] ${style.btn}`}>
