@@ -7,10 +7,12 @@ export default function Product() {
         alt="xydi"
       />
       <div className="flex flex-col items-start">
-        <p className="text-[12px]">DISPLASES Hoodie</p>
-        <p className="text-[12px]">I DONT CARE in Gray</p>
+        <div className="mb-[8px]">
+          <p className="text-[12px] text-[#fff]">DISPLASES Hoodie</p>
+          <p className="text-[12px] text-[#fff]">I DONT CARE in Gray</p>
+        </div>
         <div className="flex gap-2 justify-center">
-          <p className="text-[12px]">12 300₽</p>
+          <p className="text-[12px] text-[#fff]">12 300₽</p>
           <p className="line-through text-[12px] text-[#717171]">15 500₽</p>
         </div>
       </div>
