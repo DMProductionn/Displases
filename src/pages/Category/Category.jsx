@@ -12,14 +12,14 @@ export default function Category() {
           <Link to="/">
             {/* BACK */}
             <button
-              className={`h-[40px] uppercase text-[12px] bg-[#333232] rounded-[6px] flex items-center justify-center w-[103px] pt-[12px] pb-[10px]`}>
-              <img className="mr-[4px]" src="./img/icons/chevron-left.svg" alt="arrow" />
+              className={`h-[40px] uppercase text-[12px] bg-gray-light rounded-[6px] flex items-center justify-center w-[103px] pt-[12px] pb-[10px]`}>
+              <img className={`arrowBack mr-[4px]`} src="./img/icons/chevron-right-white.svg" alt="arrow" />
               BACK
             </button>
           </Link>
         </div>
         <div className={`flex title`}>
-          <h2 className="text-[28px]">Толстовки</h2>
+          <h2 className="text-[18px] sm:text-[24px] font-Floripa">Толстовки</h2>
         </div>
         <Filter />
       </div>

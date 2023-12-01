@@ -31,7 +31,7 @@ export default {
       'Druk-cyr': ['Druk Cyr'],
       'Floripa': ['Floripa'],
       'Gilroy': ['Gilroy'],
-    },
+     },
     },
   },
   plugins: [],

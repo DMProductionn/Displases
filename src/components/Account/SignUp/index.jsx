@@ -5,8 +5,8 @@ export default function Index() {
     return (
         <div className={style.wrapper}>
             <div className={style.header}>
-                <h1>Register</h1>
-                <p>In the event your details change, level one verification can be updated at a later date</p>
+                <h1 className='font-[700]'>Register</h1>
+                <p className='text-[#929192]'>In the event your details change, level one verification can be updated at a later date</p>
             </div>
 
             {/* Форма регистрации */}
