@@ -25,11 +25,11 @@ export default function FilterBtn() {
           
 
           {/* фильтры цены */}
-          <div class={`${style.price} ${style.active} px-[10px] bg-gray-main`}>
-            <ul className='flex flex-col gap-[10px] pl-[10px] pt-[13px] pb-[10px]'>
-              <li><button className='text-[12px]'>от 8к до 10к</button></li>
-              <li><button className='text-[12px]'>от 10к до 12к</button></li>
-              <li><button className='text-[12px]'>от 12к до 20к</button></li>
+          <div class={`${style.price} ${style.active} bg-gray-main`}>
+            <ul>
+              <li className={`py-[6px]`}><button className='text-[12px] ml-[20px]'>от 8к до 10к</button></li>
+              <li className={`${style.activePrice} py-[6px]`}><button className='text-[12px] ml-[20px]'>от 10к до 12к</button></li>
+              <li className={`py-[6px]`}><button className='text-[12px] ml-[20px]'>от 12к до 20к</button></li>
             </ul>
           </div>
 
@@ -41,12 +41,12 @@ export default function FilterBtn() {
           </div>
 
           {/* фильтры цветов */}
-          <div className={`${style.color} ${style.active} pl-[20px]`}>
-            <ul className='py-[10px] flex flex-col gap-[10px]'>
-              <li><button className='text-[12px]'>Синий</button></li>
-              <li><button className='text-[12px]'>Белый</button></li>
-              <li><button className='text-[12px]'>Черный</button></li>
-              <li><button className='text-[12px]'>Серый</button></li>
+          <div className={`${style.color} ${style.active}`}>
+            <ul>
+              <li className={`py-[6px]`}><button className='text-[12px] ml-[20px]'>Синий</button></li>
+              <li className={`py-[6px]`}><button className='text-[12px] ml-[20px]'>Белый</button></li>
+              <li className={`${style.activeColor} py-[6px]`}><button className='text-[12px] ml-[20px]'>Черный</button></li>
+              <li className={`py-[6px]`}><button className='text-[12px] ml-[20px]'>Серый</button></li>
             </ul>
           </div>
 

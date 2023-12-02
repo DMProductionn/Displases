@@ -124,6 +124,13 @@ input[type="range"]::-ms-fill-upper {
   color: #111;
 }
 
+.activePrice {
+  background-color: #333232;
+}
+
+.activeColor {
+  background-color: #333232;
+}
 
 
 
