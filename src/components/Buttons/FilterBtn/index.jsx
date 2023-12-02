@@ -1,7 +1,7 @@
 import React from 'react';
-import style from './Filter.module.css'
+import style from './FilterBtn.module.css'
 
-export default function Filter() {
+export default function FilterBtn() {
 
   return (
     <div className={`flex filterr relative`}>
@@ -16,7 +16,7 @@ export default function Filter() {
       {/* Выпадающее меню с фильтрами */}
         <div className= {`${style.FilterPopup} ${style.active} border-[#fff] min-w-[150px] absolute left-0 top-[50px] rounded-[6px] bg-gray-main w-full`}>
           <div className="px-[12px] rounded-[6px] flex justify-between items-center w-full h-[36px] bg-gray-light"> 
-            <p>Цена</p>
+            <p className='text-[12px]'>Цена</p>
             <button>
               <img className={`${style.arrow} ${style.active}`} width={16} height={16} src="./img/icons/chevron-right-white.svg" alt="arrow" />
             </button>
@@ -27,14 +27,14 @@ export default function Filter() {
           {/* фильтры цены */}
           <div class={`${style.price} ${style.active} px-[10px] bg-gray-main`}>
             <ul className='flex flex-col gap-[10px] pl-[10px] pt-[13px] pb-[10px]'>
-              <li><button>от 8к до 10к</button></li>
-              <li><button>от 10к до 12к</button></li>
-              <li><button>от 12к до 20к</button></li>
+              <li><button className='text-[12px]'>от 8к до 10к</button></li>
+              <li><button className='text-[12px]'>от 10к до 12к</button></li>
+              <li><button className='text-[12px]'>от 12к до 20к</button></li>
             </ul>
           </div>
 
           <div className="px-[12px] flex justify-between items-center w-full h-[36px] bg-gray-light"> 
-            <p className=''>Цвет</p>
+            <p className='text-[12px]'>Цвет</p>
             <button>
               <img className={`${style.arrow} ${style.active}`} width={16} height={16} src="./img/icons/chevron-right-white.svg" alt="arrow" />
             </button>
@@ -43,10 +43,10 @@ export default function Filter() {
           {/* фильтры цветов */}
           <div className={`${style.color} ${style.active} pl-[20px]`}>
             <ul className='py-[10px] flex flex-col gap-[10px]'>
-              <li><button>Синий</button></li>
-              <li><button>Белый</button></li>
-              <li><button>Черный</button></li>
-              <li><button>Серый</button></li>
+              <li><button className='text-[12px]'>Синий</button></li>
+              <li><button className='text-[12px]'>Белый</button></li>
+              <li><button className='text-[12px]'>Черный</button></li>
+              <li><button className='text-[12px]'>Серый</button></li>
             </ul>
           </div>
 
