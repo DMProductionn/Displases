@@ -6,7 +6,7 @@ import SizeBtn from '../../components/Buttons/SizeBtn';
 
 export default function ViewProduct() {
   return (
-    <div className="bg-gray-main max-w-[1160px] w-full m-auto rounded-[6px] py-[12px] px-[20px]">
+    <div className="bg-gray-main max-w-[1170px] w-full m-auto rounded-[6px] py-[12px] px-[20px]">
       <BackBtn />
       <div className="flex  gap-[40px] mt-[15px] mb-[25px]">
         <div className="w-full max-w-[500px]">
