@@ -1,0 +1,17 @@
+.price {
+  background-color: #1D1D1D !important;
+    list-style: none;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.price.active {
+  background-color: #1D1D1D !important;
+  max-height: 400px;
+  border: 1px solid #fff;
+}
