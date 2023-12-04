@@ -8,8 +8,8 @@ export default function ViewProduct() {
   return (
     <div className="bg-gray-main max-w-[1170px] w-full m-auto rounded-[6px] py-[12px] px-[20px]">
       <BackBtn />
-      <div className="flex  gap-[40px] mt-[15px] mb-[25px]">
-        <div className="w-full max-w-[500px]">
+      <div className="flex  gap-[40px] mt-[15px] mb-[25px] w-full">
+        <div className="w-full">
           <div className="border-[1px] border-gray-light max-w-[535px] w-full mb-[12px] rounded-[6px]">
             <img
               className="p-[20px]"
@@ -34,7 +34,7 @@ export default function ViewProduct() {
             </div>
           </div>
         </div>
-        <div className="w-full max-w-[500px]">
+        <div className="w-full">
           <p className="text-[30px] leading-[125%] mb-[20px]">
             DISPLASES Hoodie <br /> I DONT CARE in Gray
           </p>
@@ -45,9 +45,9 @@ export default function ViewProduct() {
             </div>
             <div className="flex gap-[20px]">
               <SizeBtn />
-              <button className="bg-[#F64343] w-full max-w-[237px] text-[14px] font-[700] rounded-[6px]">
+              <Link to='/cart' className="bg-[#F64343] w-full max-w-[237px] text-[14px] font-[700] rounded-[6px] flex justify-center"><button>
                 ADD TO CART
-              </button>
+              </button></Link>
             </div>
 
             <div className="flex flex-col gap-[20px] mt-[20px]">
