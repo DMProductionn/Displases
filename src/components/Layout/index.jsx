@@ -7,7 +7,7 @@ export default function Layout() {
     return (
         <>
             <Header />
-            <div className="wrapper max-w-[1200px] m-auto px-[15px]">
+            <div className="wrapper w-full max-w-[1200px] m-auto px-[15px]">
                 <Category />
                 <Outlet />
             </div>
