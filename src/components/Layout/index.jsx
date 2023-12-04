@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
-import CategoryBtn from '../CategoryBtn';
+import CategoryBtn from '../Category';
 import Footer from './Footer';
 
 export default function Layout() {
