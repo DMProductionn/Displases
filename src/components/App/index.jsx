@@ -13,6 +13,7 @@ import Error from '../Error';
 import Category from '../../pages/Category/Category';
 import SignUp from '../Account/SignUp'
 import SignIn from '../Account/SignIn'
+import Profile from '../../pages/Profile'
 
 function App() {
   const router = createBrowserRouter(
@@ -23,6 +24,7 @@ function App() {
 
         <Route path='/signup' element={<SignUp />} /> 
         <Route path='/signin' element={<SignIn />} />  
+        <Route path='/profile' element={<Profile />}/>
       </Route>,
     ),
   );
