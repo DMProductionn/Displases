@@ -15,6 +15,7 @@ import SignUp from '../Account/SignUp'
 import SignIn from '../Account/SignIn'
 import ViewProduct from '../../pages/ViewProduct';
 import Cart from '../../pages/Cart'
+import Profile from '../../pages/Profile';
 
 function App() {
   const router = createBrowserRouter(
@@ -27,6 +28,7 @@ function App() {
         <Route path='/signin' element={<SignIn />} />
         <Route path='/view'  element={<ViewProduct />}/>  
         <Route path='/cart'  element={<Cart />}/>  
+        <Route path='/profile' element={<Profile />} />
       </Route>,
     ),
   );
