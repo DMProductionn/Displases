@@ -8,7 +8,8 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: #333232;        
+  background: #333232;      
+  border-radius: 20px;  
 }
 
 body::-webkit-scrollbar-thumb {
@@ -16,6 +17,35 @@ body::-webkit-scrollbar-thumb {
   border-radius: 20px;        
 }
 
+/* для Firefox */
+body::-moz-scrollbar {
+  width: 10px;
+}
+
+body::-moz-scrollbar-track {
+  background-color: #333232;
+  border-radius: 20px;
+}
+
+body::-moz-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+/* для Internet Explorer/Edge */
+body::-ms-scrollbar {
+  width: 10px;
+}
+
+body::-ms-scrollbar-track {
+  background-color: #333232;
+  border-radius: 20px;
+}
+
+body::-ms-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 20px;
+}
 
 html{
   box-sizing: border-box;                               
