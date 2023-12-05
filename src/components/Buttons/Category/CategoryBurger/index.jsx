@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom'
 export default function CategoryBurger() {
   return (
     <div className={`ml-[50px] gap-[15px] mb-[15px]`}>
-        <Link to='/category'><button className='text-[#fff] p-[8px] min-w-[132px] rounded-[6px] text-[16px] text-left'>Верхняя одежда</button></Link>
+        <Link to='/category'>
+          <button className='text-[#fff] p-[8px] min-w-[132px] rounded-[6px] text-[16px] text-left'>Верхняя одежда</button>
+        </Link>
         <button className='text-[#fff] p-[8px] min-w-[132px] rounded-[6px] text-[16px] text-left'>Лонгсливы</button>
         <button className='text-[#fff] p-[8px] min-w-[132px] rounded-[6px] text-[16px] text-left'>Толстовки</button>
         <button className='text-[#fff] p-[8px] min-w-[132px] rounded-[6px] text-[16px] text-left'>Футболки</button>
