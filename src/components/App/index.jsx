@@ -16,6 +16,8 @@ import SignIn from '../Account/SignIn'
 import ViewProduct from '../../pages/ViewProduct';
 import Cart from '../../pages/Cart'
 import Profile from '../../pages/Profile';
+import Sale from '../../pages/Sale';
+import NewCol from '../../pages/NewCol';
 
 function App() {
   const router = createBrowserRouter(
@@ -29,6 +31,8 @@ function App() {
         <Route path='/view'  element={<ViewProduct />}/>  
         <Route path='/cart'  element={<Cart />}/>  
         <Route path='/profile' element={<Profile />} />
+        <Route path='/sale' element={<Sale />} />
+        <Route path='/newcol' element={<NewCol />} />
       </Route>,
     ),
   );

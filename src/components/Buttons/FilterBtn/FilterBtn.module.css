@@ -12,6 +12,7 @@
     transition: all 0.3s ease-out;
     max-height: 0;
     overflow: hidden;
+    @apply border-[#fff] min-w-[150px] absolute left-0 top-[50px] rounded-[6px] bg-gray-main w-full
 }
 
 .price {
@@ -43,6 +44,10 @@
   max-height: 400px;
 }
 
+.price {
+  @apply bg-gray-main
+}
+
 .price.active {
   background-color: #1D1D1D !important;
   max-height: 400px;
@@ -54,69 +59,34 @@
 }
 
 
-input[type=range] {
-  -webkit-appearance: none
-}
-
-input[type=range] {
-  -webkit-appearance: none;
-  width: 100%;
-  border-radius: 8px;
-  height: 4px;
-  background-color: #333232;
-} 
-
-input[type='range']::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  background-color: #ecf0f1;
-  width: 10px;
-  height: 10px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-
-input[type='range'] {
-  overflow: hidden;
-  width: 100%;
-  -webkit-appearance: none;
-  background-color: #333232;
-}
-
-
-input[type='range']::-webkit-slider-thumb {
-  width: 10px;
-  -webkit-appearance: none;
-  height: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  background: #fff;
-  box-shadow: -80px 0 0 80px #fff;
-}
-
-input[type="range"]::-moz-range-track {
-  background-color: #333232;
-}
-
-input[type="range"]::-ms-fill-upper {
-  background-color: #333232;
-}
-
 .arrow {
   transform: rotate(-90deg);
   transition: all 0.2s ease-in-out;
 }
 
-.arrow.active {
-  transform: rotate(0deg);
+
+.arrowFilterSvg path {
+  fill: #fff;
+  transition: all 0.2s ease-in-out;
 }
 
 .arrowFilterSvg path.active {
   fill: #111111;
 }
 
+.arrowFilterSvg {
+  @apply ml-[4px]
+}
+
 .arrowFilterSvg.active {
-  transform: rotate(270deg)
+  transform: rotate(-90deg);
+  transition: all .2s ease-in-out;
+  @apply ml-[4px]
+}
+
+.filterBtn {
+  @apply bg-gray-light h-[40px] uppercase text-[12px] rounded-[6px] flex items-center justify-center w-[150px];
+  transition: all .2s ease-in-out;
 }
 
 .filterBtn.active {
