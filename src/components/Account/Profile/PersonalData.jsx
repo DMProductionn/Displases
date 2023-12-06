@@ -6,22 +6,22 @@ export default function PersonalData() {
         <h3 className='text-white font-[700] text-[20px]'>Личные данные</h3>
         <div className="w-[100%]">
           <p className='text-[#929192] text-[14px] font-[400] capitalize mb-[15px]'>Имя</p>
-          <input type="text" name="" id="" className='h-[4.5vh] w-[100%] py-1 px-2 rounded-[6px] bg-[#111]' />
+          <input type="text" name="" id="" className='h-[4.5vh] min-h-[22px] max-h-[45px] w-[100%] py-1 px-2 rounded-[6px] bg-[#111] outline-none' />
         </div>
   
         <div className="w-[100%]">
           <p className='text-[#929192] text-[14px] font-[400] capitalize mb-[15px]' >Фамилия</p>
-          <input type="text" name="" id="" className='h-[4.5vh] w-[100%] py-1 px-2 rounded-[6px] bg-[#111]' />
+          <input type="text" name="" id="" className='h-[4.5vh] min-h-[22px] max-h-[45px] w-[100%] py-1 px-2 rounded-[6px] bg-[#111] outline-none' />
         </div>
   
         <div className="w-[100%]">
           <p className='text-[#929192] text-[14px] font-[400] capitalize mb-[15px]' >Дата рождения</p>
           <div className='w-[100%] flex justify-between gap-[10px]'>
-            <input type="number" min="1" max="31" name="" id="" className='h-[4.5vh] w-[100%] py-1 px-2 rounded-[6px] bg-[#111]' placeholder="День" />
+            <input type="number" min="1" max="31" name="" id="" className='h-[4.5vh] min-h-[22px] max-h-[45px] w-[100%] py-1 px-2 rounded-[6px] bg-[#111] outline-none' placeholder="День" />
   
             {/* Не знаю как сделать placeholder серым  */}
-            <select className='h-[4.5vh] w-[100%] py-1 px-2 rounded-[6px] bg-[#111] appearance-none text-[#999]' >
-              <option value="" disabled selected defaultValue='месяц' className='x'></option>
+            <select className='h-[4.5vh] min-h-[22px] max-h-[45px]  w-[100%] py-1 px-2 rounded-[6px] bg-[#111] appearance-none text-[#999] outline-none' >
+              <option value="" disabled defaultValue='месяц' className='x'>Месяц</option>
               <option value="" className="text-white">Январь</option>
               <option value="">Февраль</option>
               <option value="">Март</option>
@@ -35,7 +35,7 @@ export default function PersonalData() {
               <option value="">Ноябрь</option>
               <option value="">Декабрь</option>
             </select>
-            <input type="number" min="1950" max="2015" className='h-[4.5vh] w-[100%] py-1 px-2 rounded-[6px] bg-[#111]' placeholder="Год" />
+            <input type="number" min="1950" max="2015" className='h-[4.5vh] min-h-[22px] max-h-[45px] w-[100%] py-1 px-2 rounded-[6px] bg-[#111] outline-none' placeholder="Год" />
           </div>
         </div>
       </div>
