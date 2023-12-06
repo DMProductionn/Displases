@@ -11,7 +11,7 @@ export default function Profile() {
 
             {/* Заголовок страницы */}
             <div className="flex justify-center">
-                <h1 className='text-[18px] sm:text-[24px] font-[Inter]'>ПРОФИЛЬ</h1>
+                <h1 className='text-[18px] sm:text-[24px] font-Floripa'>ПРОФИЛЬ</h1>
             </div>
                 <UserContacts />
                 <PersonalData />
