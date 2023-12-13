@@ -1,8 +1,17 @@
 [
   {
-    "img": "./img/Clothes/Hoodie-gray-front.webp",
+    "id": 1,
+    "img": "./img/Clothes/Hoodies/Hoodie-gray-front.webp",
     "title": "товар-1",
+    "price": 13000,
+    "discount": 15000
+  },
+  {"id": 2,
+    "img": "./img/Clothes/Hoodies/Hoodie-white-front.webp",
+    "title": "товар-2",
     "price": 12000,
-    "sale" : 15000
+    "discount": 20000,
+    "sale": "true"
   }
 ]
+
