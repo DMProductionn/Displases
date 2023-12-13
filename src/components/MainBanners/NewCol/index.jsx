@@ -46,10 +46,12 @@ export default function BannerNewCol() {
         </div>
         </Link>
         <div className="mb-[20px] flex justify-center items-center">
+          <Link to='/category'>
           <button
             className={`uppercase absolute z-[15] bottom-[25px] cursor-pointer bg-[#333232] w-[103px] py-[8px] rounded-[6px] text-[12px] ${style.btn}`}>
             MORE
           </button>
+          </Link>
         </div>
         <img
           width={350}
