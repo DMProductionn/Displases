@@ -1,6 +1,7 @@
 import PersonalData from "../components/Account/Profile/PersonalData"
 import UserContacts from "../components/Account/Profile/UserContacts"
 import BackBtn from "../components/Buttons/BackBtn"
+import Bio from "../components/Account/Profile/Bio"
 
 export default function Profile() {
 
@@ -13,8 +14,9 @@ export default function Profile() {
             <div className="flex justify-center">
                 <h1 className='text-[18px] sm:text-[24px] font-Floripa'>ПРОФИЛЬ</h1>
             </div>
-                <UserContacts />
-                <PersonalData />
+            <Bio />
+            <UserContacts />
+            <PersonalData />
 
             {/* Кнопка сохранить */}
             <div className='flex justify-center'>
