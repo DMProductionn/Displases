@@ -2,16 +2,18 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { setSkeleton } from '../../components/redux/Slices/Category';
 import Product from '../../components/Product';
 import Filter from '../../components/Buttons/FilterBtn';
 import BackBtn from '../../components/Buttons/BackBtn';
 import './Category.css';
 import NotFound from '../../components/NotFound';
+import Skeleton from '../../components/Skeleton';
 
 
 export default function Category() {
   const dispatch = useDispatch()
-  const { sale, selectCategory, categoryBtn } = useSelector((state) => state.Category);
+  const { sale, selectCategory, categoryBtn, skeleton } = useSelector((state) => state.Category);
 
   // все товары
   const [item, setItem] = useState([]);
@@ -25,7 +27,9 @@ export default function Category() {
 
 
   useEffect(() => {
+    dispatch(setSkeleton(true));
     axios.get(`https://65707bc209586eff66417bbf.mockapi.io/item?${saleUrl}&${categoryUrl}`).then((res) => {
+      dispatch(setSkeleton(false));
       setItem(res.data);
     });
   }, [saleUrl, categoryUrl]);
@@ -42,7 +46,7 @@ export default function Category() {
         <Filter />
       </div>
       <div className={`grid gap-[10px] wrapper relative`}>
-        {item.length == 0 ? <NotFound /> : item.map((obj) => (
+        {skeleton ? <Skeleton count={6} /> : item.length == 0 ? <NotFound /> : item.map((obj) => (
           <Link to="/view">
             <Product
               key={obj.id}

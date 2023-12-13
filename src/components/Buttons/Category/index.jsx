@@ -7,16 +7,13 @@ import './CategoryBtn.css';
 
 export default function Category() {
   const dispatch = useDispatch();
-  const { category, categoryBtn, selectCategory } = useSelector((state) => state.Category);
+  const { category, categoryBtn} = useSelector((state) => state.Category);
 
   const setCategoryBtn = (value, index) => {
     dispatch(getFalseSale());
     dispatch(getColorCategoryBtn(index));
     dispatch(selectedCategory(value))
   };
-
-  console.log(category);
-  console.log(selectCategory);
 
   return (
     <div className={`categoryWrapper hidden flex-wrap justify-between mb-[15px]`}>
