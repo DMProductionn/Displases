@@ -36,7 +36,6 @@ function App() {
       <Route path="/" element={<Layout />} errorElement={<Error />}>
         <Route index element={<Home />} />
         <Route path="/category" element={<Category />} />
-
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/view" element={<ViewProduct />} />

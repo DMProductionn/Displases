@@ -29,7 +29,9 @@ export default function Category() {
   useEffect(() => {
     dispatch(setSkeleton(true));
     axios.get(`https://65707bc209586eff66417bbf.mockapi.io/item?${saleUrl}&${categoryUrl}`).then((res) => {
-      dispatch(setSkeleton(false));
+      setTimeout(() => {
+        dispatch(setSkeleton(false));
+      }, "1000");
       setItem(res.data);
     });
   }, [saleUrl, categoryUrl]);
@@ -46,8 +48,8 @@ export default function Category() {
         <Filter />
       </div>
       <div className={`grid gap-[10px] wrapper relative`}>
-        {skeleton ? <Skeleton count={6} /> : item.length == 0 ? <NotFound /> : item.map((obj) => (
-          <Link to="/view">
+        {skeleton ? <Skeleton count={6} /> : item.length == 0 ? <NotFound /> : item.map((obj, index) => (
+          <Link key={index} to="/view">
             <Product
               key={obj.id}
               img={obj.img}

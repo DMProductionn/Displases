@@ -1,4 +1,5 @@
 export default function Product({ img, title, price, discount}) {
+
   return (
     <div className="cursor-pointer rounded-[6px] justify-center items-center border-[1px] border-[#333232] p-[15px] w-full max-w-[350px] duration-[500ms]  hover:bg-[#333232]">
       <img
