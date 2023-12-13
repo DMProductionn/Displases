@@ -18,10 +18,9 @@ export default function Category() {
   return (
     <div className={`categoryWrapper hidden flex-wrap justify-between mb-[15px]`}>
       {category.map((value, index) => (
-        <Link to="/category">
+        <Link key={index} to="/category">
           <button
             onClick={() => setCategoryBtn(value, index)}
-            key={index}
             className={
               categoryBtn === index
                 ? `active p-[8px] min-w-[115px] bg-gray-main rounded-[6px] text-gray-text`

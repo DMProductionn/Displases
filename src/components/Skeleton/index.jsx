@@ -4,13 +4,17 @@ import style from './Skeleton.module.css'
 const Skeleton = ({ count=6 }) => {
   return (
     <>
-      <ul>
-        {[Array(count)].map((_, index) => (
-          <li key={index} className={style.main}>
-            <div className={style.title}>1</div>
-          </li>
+        {[... new Array(count)].map((_, index) => (
+          <div key={index} className={style.main}>
+            <div className={style.title}></div>
+            <div className={style.img}></div>
+            <div className='flex'>
+              <div className={style.price}></div>
+              <div className={style.sale}></div>
+            </div>
+            <div></div>
+          </div>
         ))}
-      </ul>
     </>
   )
 };
