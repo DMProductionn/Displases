@@ -1,115 +1,31 @@
-import { redirect } from "react-router-dom";
 import { useState } from "react";
 
 export default function Search({ setSearchParams, query }) {
     const [search, setSearch] = useState(query);
-    const [data, setData] = useState();
 
     const handleSearch = (e) => {
         e.preventDefault();
-        const form = e.target;
-
-        const query = form.search.value
+        const query = e.target.value;
         const params = {}
 
-        if (query.length) params.post = query 
-        // setSearchParams(params)
+        if (query.length) params.item = query
 
-        return redirect('/')
+        setSearchParams(params)
+        setSearch(query)
     };
 
     return (
-        <form onSubmit={handleSearch} autoComplete="off">
-            <input type="search" name="search" value={search} onChange={e => setSearch(e.target.value)} className="text-black"/>
-            <input type="submit" value='Search'/>
+        <form autoComplete="off" style={{ position: 'relative' }}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" style={{ position: 'absolute', top: '50%', transform: 'translateY(-50%)', left: '10px' }}>
+                <path d="M8.8065 7.75792C9.39956 6.95048 9.74988 5.95365 9.74988 4.875C9.74988 2.18261 7.56727 0 4.87488 0C2.18249 0 -0.00012207 2.18261 -0.00012207 4.875C-0.00012207 7.56739 2.18249 9.75 4.87488 9.75C5.95382 9.75 6.95089 9.3995 7.75844 8.80614L7.75779 8.80662C7.77991 8.83661 7.80455 8.86533 7.8317 8.89248L10.7196 11.7803C11.0124 12.0732 11.4873 12.0732 11.7802 11.7803C12.0731 11.4874 12.0731 11.0126 11.7802 10.7197L8.89236 7.83182C8.86521 7.80467 8.83649 7.78004 8.8065 7.75792ZM8.99988 4.875C8.99988 7.15317 7.15305 9 4.87488 9C2.5967 9 0.749878 7.15317 0.749878 4.875C0.749878 2.59683 2.5967 0.75 4.87488 0.75C7.15305 0.75 8.99988 2.59683 8.99988 4.875Z" fill="#949494" />
+            </svg>
+            <input
+                type="search"
+                name="search"
+                placeholder="Search"
+                value={search}
+                onChange={handleSearch}
+                className="text-white py-[5px] pl-[30px] gap-[6px] border-none rounded-[6px] w-[10vw] min-w-[140px] bg-[#111] border-[1px] border-[#333232]" />
         </form>
-    );
+    )
 }
-
-// function BlogFilter({ setSearchParams, latest, query }) {
-
-//     const [search, setSearch] = useState(query)
-//     const [checked, setChecked] = useState(latest)
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     const form = e.target;
-
-//     const query = form.search.value;
-//     const isLatest = form.latest.checked;
-
-//     const params = {};
-
-//     if (query.length) params.post = query;
-//     if (isLatest) params.latest = true;
-
-//     setSearchParams(params);
-//   };
-
-//   return (
-//     <form autoComplete="off" onSubmit={handleSubmit}>
-//       <input type="search" name="search" value={search} onChange={e => setSearch(e.target.value)}/>
-//       <input type="submit" value="Search" />
-//       <label style={{ padding: "0 1rem" }}>
-//         <input type="checkbox" name="latest" checked={checked} onChange={e => setChecked(e.target.checked)}/> New only
-//       </label>
-//     </form>
-//   );
-// }
-
-// export { BlogFilter };
-
-// import { Link, useSearchParams } from 'react-router-dom';
-// import { BlogFilter } from '../components/BlogFilter';
-
-// const Blogpage = () => {
-//     const [posts, setPosts] = useState([]);
-//     const [searchParams, setSearchParams] = useSearchParams()
-
-//     const query = searchParams.get('post') || ''
-//     const latest = searchParams.has('latest')
-
-//     const startFrom = latest ? 80 : 1
-
-//     useEffect(() => {
-//         fetch('https://jsonplaceholder.typicode.com/posts')
-//             .then(res => res.json())
-//             .then(data => setData(data))
-//     }, []);
-
-//     return (
-//         <div>
-//             <h1>Our news</h1>
-//             <BlogFilter setSearchParams={setSearchParams} latest={latest} query={query}/>
-
-//             <Link to="/posts/new">Add new post</Link>
-//             {
-//                 posts.filter(post => post.title.includes(query) && post.id >= startFrom
-//                 ).map(post => (
-//                     <Link key={post.id} to={`/posts/${post.id}`}>
-//                         <li>{post.title}</li>
-//                     </Link>
-//                 ))
-//             }
-//         </div>
-//     )
-// }
-
-// export {Blogpage}
-// import Search from '..'
-// const [searchParams, setSearchParams] = useSearchParams()
-// const [posts, setPosts] = useState([]);
-// const query = searchParams.get('post') || ''
-//     return (
-//         <>
-            
-//             <Search setSearchParams={setSearchParams} query={query}/>
-
-//             {
-//                 posts.filter(post => post.title.includes(query)
-//                 ).map(post => (
-
-//                 ))
-//             }
-//         </>
-//     )

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSkeleton } from '../../components/redux/Slices/Category';
 import Product from '../../components/Product';
@@ -9,9 +9,13 @@ import BackBtn from '../../components/Buttons/BackBtn';
 import './Category.css';
 import NotFound from '../../components/NotFound';
 import Skeleton from '../../components/Skeleton';
+import Search from '../../components/search';
 
 
 export default function Category() {
+  const [searchParams, setSearchParams] = useSearchParams()
+  const query = searchParams.get('item') || ''
+
   const dispatch = useDispatch()
   const { sale, selectCategory, categoryBtn, skeleton } = useSelector((state) => state.Category);
 
@@ -23,21 +27,24 @@ export default function Category() {
 
   // сортировка категории
 
-  const categoryUrl = categoryBtn === 0 ? '' : `category=${selectCategory}` 
-
+  const categoryUrl = categoryBtn === 0 ? '' : `category=${selectCategory}`
 
   useEffect(() => {
     dispatch(setSkeleton(true));
-    axios.get(`https://65707bc209586eff66417bbf.mockapi.io/item?${saleUrl}&${categoryUrl}`).then((res) => {
-      setTimeout(() => {
-        dispatch(setSkeleton(false));
-      }, "1000");
-      setItem(res.data);
-    });
+    axios
+      .get(`https://65707bc209586eff66417bbf.mockapi.io/item?${saleUrl}&${categoryUrl}`)
+      .then((res) => {
+        setTimeout(() => {
+          dispatch(setSkeleton(false));
+        }, "1000");
+        setItem(res.data);
+        console.log(res.data);
+      });
   }, [saleUrl, categoryUrl]);
 
   return (
     <div className=" bg-gray-main rounded-[6px] px-[20px] py-3 min-h-[600px]">
+      <Search setSearchParams={setSearchParams} query={query} />
       <div className="flex flex-wrap gap-[15px] items-center place-content-between mb-[15px]">
         <div className={`flex back`}>
           <BackBtn />
@@ -48,17 +55,23 @@ export default function Category() {
         <Filter />
       </div>
       <div className={`grid gap-[10px] wrapper relative`}>
-        {skeleton ? <Skeleton count={6} /> : item.length == 0 ? <NotFound /> : item.map((obj, index) => (
-          <Link key={index} to="/view">
-            <Product
-              key={obj.id}
-              img={obj.img}
-              title={obj.title}
-              price={obj.price}
-              discount={obj.discount}
-            />
-          </Link>
-        ))}
+        {
+          skeleton ?
+            <Skeleton count={6} /> : item.length == 0 ? <NotFound /> :
+              item
+                .filter(el => el.title.includes(query))
+                .map((obj, index) => (
+                  <Link key={index} to="/view">
+                    <Product
+                      key={obj.id}
+                      img={obj.img}
+                      title={obj.title}
+                      price={obj.price}
+                      discount={obj.discount}
+                    />
+                  </Link>
+                ))
+        }
       </div>
     </div>
   );
