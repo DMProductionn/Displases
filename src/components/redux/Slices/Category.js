@@ -3,7 +3,8 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   category: [],
   categoryBtn: -1,
-  sale: true, 
+  sale: false, 
+  newCol: false,
   selectCategory: '',
   skeleton: true,
 }
@@ -15,12 +16,11 @@ export const Category = createSlice({
     setCategory: (state, action) => {
       state.category = action.payload
     },
-    getTrueSale(state) {
-      state.sale = true;
+    setSale(state, action) {
+      state.sale = action.payload;
     },
-    getFalseSale(state) {
-      state.sale = false;
-      localStorage.setItem('bool', false)
+    setNewCol(state, action) {
+      state.newCol = action.payload;
     },
     getColorCategoryBtn: (state, action) => {
       state.categoryBtn = action.payload;
@@ -38,7 +38,7 @@ export const Category = createSlice({
 })
 
 
-export const { setCategory, getColorCategoryBtn, getFalseSale, getTrueSale, selectedCategory, removeColorCategoryBtn, setSkeleton } = Category.actions;
+export const { setCategory, getColorCategoryBtn, setSale, setNewCol, selectedCategory, removeColorCategoryBtn, setSkeleton } = Category.actions;
 
 
 export default Category.reducer

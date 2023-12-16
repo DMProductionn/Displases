@@ -20,6 +20,8 @@ import SignIn from '../Account/SignIn';
 import ViewProduct from '../../pages/ViewProduct';
 import Cart from '../../pages/Cart';
 import Profile from '../../pages/Profile';
+import Sale from '../../pages/Sale';
+import NewCol from '../../pages/NewCol';
 
 function App() {
   const dispatch = useDispatch();
@@ -36,6 +38,8 @@ function App() {
       <Route path="/" element={<Layout />} errorElement={<Error />}>
         <Route index element={<Home />} />
         <Route path="/category" element={<Category />} />
+        <Route path="/sale" element={<Sale />} />
+        <Route path="/newcol" element={<NewCol />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/view" element={<ViewProduct />} />

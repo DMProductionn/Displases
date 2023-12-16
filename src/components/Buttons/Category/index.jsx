@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { getColorCategoryBtn, getFalseSale, selectedCategory } from '../../redux/Slices/Category';
+import { getColorCategoryBtn, setSale, selectedCategory } from '../../redux/Slices/Category';
 
 import './CategoryBtn.css';
 
@@ -10,7 +10,7 @@ export default function Category() {
   const { category, categoryBtn} = useSelector((state) => state.Category);
 
   const setCategoryBtn = (value, index) => {
-    dispatch(getFalseSale());
+    dispatch(setSale(false));
     dispatch(getColorCategoryBtn(index));
     dispatch(selectedCategory(value))
   };

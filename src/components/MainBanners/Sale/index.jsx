@@ -1,15 +1,15 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import style from './MainBannerSale.module.css';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getTrueSale } from '../../redux/Slices/Category';
+import { setSale } from '../../redux/Slices/Category';
 
 export default function BannerSale() {
 
   const dispatch = useDispatch()
 
   const addTrueSale = () => {
-    dispatch(getTrueSale())
+    dispatch(setSale(true))
   }
 
   return (
@@ -62,7 +62,7 @@ export default function BannerSale() {
           </div>
         </Link>
         <div className="mb-[20px] flex justify-center items-center">
-          <Link to='/category'>
+          <Link to='/sale'>
           <button
           onClick={addTrueSale}
             className={`uppercase absolute bottom-[25px] z-[15] cursor-pointer bg-[#333232] w-[103px] py-[8px] rounded-[6px] text-[12px] ${style.btn}`}>
