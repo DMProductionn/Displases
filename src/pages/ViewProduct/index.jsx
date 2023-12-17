@@ -4,7 +4,12 @@ import { Link } from 'react-router-dom';
 import BackBtn from '../../components/Buttons/BackBtn';
 import SizeBtn from '../../components/Buttons/SizeBtn';
 
+import { useDispatch } from 'react-redux';
+import { add } from '../../components/redux/Slices/Cart';
+
 export default function ViewProduct() {
+  const dispatch = useDispatch()
+
   return (
     <div className="bg-gray-main max-w-[1170px] w-full m-auto rounded-[6px] py-[12px] px-[20px]">
       <BackBtn />
@@ -45,9 +50,11 @@ export default function ViewProduct() {
             </div>
             <div className="flex gap-[20px]">
               <SizeBtn />
-              <Link to='/cart' className="bg-[#F64343] w-full max-w-[237px] text-[14px] font-[700] rounded-[6px] flex justify-center"><button>
+              <Link to='/cart' onClick={() => dispatch(add())} className="bg-[#F64343] w-full max-w-[237px] text-[14px] font-[700] rounded-[6px] flex justify-center">
+                <button>
                 ADD TO CART
-              </button></Link>
+              </button>
+              </Link>
             </div>
 
             <div className="flex flex-col gap-[20px] mt-[20px]">

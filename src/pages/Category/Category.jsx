@@ -38,7 +38,6 @@ export default function Category() {
           dispatch(setSkeleton(false));
         }, "1000");
         setItem(res.data);
-        console.log(res.data);
       });
   }, [saleUrl, categoryUrl]);
 
