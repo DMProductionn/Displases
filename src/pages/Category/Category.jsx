@@ -44,7 +44,6 @@ export default function Category() {
 
   return (
     <div className=" bg-gray-main rounded-[6px] px-[20px] py-3 min-h-[600px]">
-      <Search setSearchParams={setSearchParams} query={query} />
       <div className="flex flex-wrap gap-[15px] items-center place-content-between mb-[15px]">
         <div className={`flex back`}>
           <BackBtn />
@@ -52,7 +51,10 @@ export default function Category() {
         <div className={`flex title`}>
           <h2 className="text-[18px] sm:text-[24px] font-Floripa ml-[43px]">{selectCategory}</h2>
         </div>
-        <Filter />
+        <div className="flex flex-nowrap gap-[20px]">
+          <Search setSearchParams={setSearchParams} query={query} />
+          <Filter />
+        </div>
       </div>
       <div className={`grid gap-[10px] wrapper relative`}>
         {
