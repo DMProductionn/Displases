@@ -35,7 +35,7 @@ export default function Sale() {
       setTimeout(() => {
         dispatch(setSkeleton(false));
       }, "1000");
-      setItem(res.data);
+      setItem(res.data); 
     });
   }, [saleUrl, categoryUrl]);
 
