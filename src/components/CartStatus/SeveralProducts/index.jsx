@@ -1,5 +1,3 @@
-import React from 'react';
-
 import BackBtn from '../../Buttons/BackBtn';
 import CartItem from './CartItem';
 

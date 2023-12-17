@@ -25,7 +25,7 @@ export default function UserContacts() {
                     <input
                         type="email"
                         name="" id=""
-                        className="w-full px-[5px] bg-[#111] rounded-[6px] outline-none"
+                        className="w-full px-[5px] bg-[#111] rounded-[6px]"
                         placeholder="user@gmail.com"
                     />
                     <button className="min-h-[17px] max-h-[38px] h-[3.5vh] py-[5px] px-[9px] rounded-[6px] bg-[#333232] flex justify-center items-center">Сохранить</button>
@@ -53,7 +53,7 @@ export default function UserContacts() {
                     <input
                         type="tel"
                         name="" id=""
-                        className="w-full px-[5px] bg-[#111] rounded-[6px] outline-none"
+                        className="w-full px-[5px] bg-[#111] rounded-[6px]"
                         placeholder="+7 (912) 000-00-00"
                     />
                     <button className="min-h-[17px] max-h-[38px] h-[3.5vh] py-[5px] px-[9px] rounded-[6px] bg-[#333232] flex justify-center items-center">Сохранить</button>
