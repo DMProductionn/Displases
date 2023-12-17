@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSkeleton } from '../components/redux/Slices/Category';
 import Product from '../components/Product';
@@ -8,9 +8,13 @@ import Filter from '../components/Buttons/FilterBtn';
 import BackBtn from '../components/Buttons/BackBtn';
 import NotFound from '../components/NotFound';
 import Skeleton from '../components/Skeleton';
+import Search from '../components/search';
 
 
 export default function Sale() {
+  const [searchParams, setSearchParams] = useSearchParams()
+  const query = searchParams.get('item') || ''
+
   const dispatch = useDispatch()
   const { sale, selectCategory, categoryBtn, skeleton } = useSelector((state) => state.Category);
 
@@ -47,20 +51,29 @@ export default function Sale() {
           <p className={`text-[#F64343] text-[18px] sm:text-[24px] font-[700] leading-[110%] mb-[5px]`}>-20%</p>
         </div>
         </div>
-        <Filter />
+        <div className="flex flex-nowrap gap-[20px]">
+          <Search setSearchParams={setSearchParams} query={query} />
+          <Filter />
+        </div>
       </div>
       <div className={`grid gap-[10px] wrapper relative`}>
-        {skeleton ? <Skeleton count={6} /> : item.length == 0 ? <NotFound /> : item.map((obj, index) => (
-          <Link key={index} to="/view">
-            <Product
-              key={obj.id}
-              img={obj.img}
-              title={obj.title}
-              price={obj.price}
-              discount={obj.discount}
-            />
-          </Link>
-        ))}
+      {
+          skeleton ?
+            <Skeleton count={6} /> : item.length == 0 ? <NotFound /> :
+              item
+                .filter(el => el.title.includes(query))
+                .map((obj, index) => (
+                  <Link key={index} to="/view">
+                    <Product
+                      key={obj.id}
+                      img={obj.img}
+                      title={obj.title}
+                      price={obj.price}
+                      discount={obj.discount}
+                    />
+                  </Link>
+                ))
+        }
       </div>
     </div>
   );
