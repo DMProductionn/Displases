@@ -1,9 +1,12 @@
-import React from 'react';
 import style from './OneProductCart.module.css';
-
 import BackBtn from '../../Buttons/BackBtn';
 
+import { removeAll } from '../../redux/Slices/Cart';
+import { useDispatch } from 'react-redux';
+
 export default function OneProductCart() {
+  const dispatch = useDispatch()
+
   return (
     <div className="bg-gray-main rounded-[6px] p-[20px]">
       <div className="flex flex-wrap justify-between gap-[10px]">
@@ -63,11 +66,11 @@ export default function OneProductCart() {
           <p className="text-[22px] leading-[110%]">12 300р</p>
           <p className="text-[#717171] line-through text-[22px] leading-[110%]">15 500р</p>
         </div>
-        <div className="flex gap-[20px]">
-          <button className="uppercase bg-red w-full max-w-[515px] h-[40px] text-[10px] 3sm:text-[14px] font-[700] rounded-[6px] flex justify-center items-center">
+        <div className="flex gap-[10px]">
+          <button className="uppercase bg-red w-full h-[40px] text-[10px] 3sm:text-[14px] font-[700] rounded-[6px] flex justify-center items-center">
             ОФОРМИТЬ ЗАКАЗ
           </button>
-          <button className="uppercase bg-gray-light w-full max-w-[515px] h-[40px] text-[10px] 3sm:text-[14px] font-[700] rounded-[6px] flex justify-center items-center">
+          <button onClick={() => dispatch(removeAll())} className="uppercase bg-gray-light w-full h-[40px] text-[10px] 3sm:text-[14px] font-[400] rounded-[6px] flex justify-center items-center">
             ОЧИСТИТЬ КОРЗИНУ
           </button>
         </div>

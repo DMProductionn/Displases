@@ -1,18 +1,20 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import OneProductCart from "../components/CartStatus/OneProductCart";
 import ClearCart from "../components/CartStatus/ClearCart";
 import SeveralProducts from "../components/CartStatus/SeveralProducts";
 import { useDispatch, useSelector } from "react-redux";
 import {
-    addElToCart,
-    removeElFromCart,
-    removeAllCart
+    add,
+    remove,
+    removeAll
 } from "../components/redux/Slices/Cart";
 
 export default function Cart() {
+    const some = 'abc'
     const dispatch = useDispatch();
     const { cart } = useSelector(state => state.Cart);
+    console.log(cart);
 
     const [content, setContent] = useState(null);
 
@@ -32,8 +34,9 @@ export default function Cart() {
     return (
       <>
         {content}
-        <button onClick={() => dispatch(removeAllCart())}>Clear</button>
-        <button onClick={() => dispatch(addElToCart())}>Add 1</button>
+        <button onClick={() => dispatch(removeAll())}>Clear</button>
+        <button onClick={() => dispatch(add(some))}>Add 1</button>
+        <button onClick={() => dispatch(remove(some))}>Remove 1</button>
       </>
     )
 }
