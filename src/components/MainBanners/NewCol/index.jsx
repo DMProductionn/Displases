@@ -24,7 +24,7 @@ export default function BannerNewCol() {
           <img
             width={160}
             height={140}
-            src="./img/Clothes/Longsleeves/Longsleeve-Front-black.webp"
+            src="/public/img/Clothes/Longsleeves/Longsleeve-black-front.webp"
             alt=""
           />
           <div className="p-[15px] pt-[6px]">
@@ -37,12 +37,8 @@ export default function BannerNewCol() {
         </div>
         </Link>
         <div className="mb-[20px] flex justify-center items-center">
-          <Link to='/newcol'>
-          <button
-          onClick={getTrueNewCol}
-            className={`uppercase absolute z-[15] bottom-[25px] cursor-pointer bg-[#333232] w-[103px] py-[8px] rounded-[6px] text-[12px] ${style.btn}`}>
+          <Link to='/newcol' onClick={getTrueNewCol} className='uppercase absolute z-[15] bottom-[25px] cursor-pointer bg-[#333232] w-[103px] py-[8px] rounded-[6px] text-[12px] font-[700] flex justify-center items-center'>
             MORE
-          </button>
           </Link>
         </div>
         <img

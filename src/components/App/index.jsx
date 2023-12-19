@@ -38,11 +38,12 @@ function App() {
       <Route path="/" element={<Layout />} errorElement={<Error />}>
         <Route index element={<Home />} />
         <Route path="/category" element={<Category />} />
+        <Route path="/category/:id" element={<ViewProduct />} />
         <Route path="/sale" element={<Sale />} />
         <Route path="/newcol" element={<NewCol />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
-        <Route path="/view" element={<ViewProduct />} />
+        {/* <Route path="/view" element={<ViewProduct />} /> */}
         <Route path="/cart" element={<Cart />} />
         <Route path="/profile" element={<Profile />} />
       </Route>,

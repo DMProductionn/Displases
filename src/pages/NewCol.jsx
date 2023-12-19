@@ -26,7 +26,7 @@ export default function NewCol() {
 
   // сортировка new collection
 
-  // const UrlNewCol = 
+  const urlNewCol = newCol === true ? 'new=true' : ''
 
   // сортировка категории
 
@@ -36,13 +36,14 @@ export default function NewCol() {
 
   useEffect(() => {
     dispatch(setSkeleton(true));
-    axios.get(`https://65707bc209586eff66417bbf.mockapi.io/item?${saleUrl}&${newCol}&${categoryUrl}`).then((res) => {
+    // axios.get(`https://657f17219d10ccb465d5edfb.mockapi.io/items?${saleUrl}&${newCol}&${categoryUrl}`).then((res) => {
+    axios.get(`https://657f17219d10ccb465d5edfb.mockapi.io/items?${urlNewCol}&${categoryUrl}`).then((res) => {
       setTimeout(() => {
         dispatch(setSkeleton(false));
       }, "1000");
       setItem(res.data);
     });
-  }, [saleUrl, categoryUrl, newCol]);
+  }, [saleUrl, categoryUrl, urlNewCol]);
 
   return (
     <div className=" bg-gray-main rounded-[6px] px-[20px] py-3 min-h-[600px]">
@@ -67,10 +68,10 @@ export default function NewCol() {
               item
                 .filter(el => el.title.includes(query))
                 .map((obj, index) => (
-                  <Link key={index} to="/view">
+                  <Link key={index} to={`/category/${obj.id}`}>
                     <Product
                       key={obj.id}
-                      img={obj.img}
+                      img={obj.imgFront}
                       title={obj.title}
                       price={obj.price}
                       discount={obj.discount}

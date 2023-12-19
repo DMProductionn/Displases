@@ -31,7 +31,7 @@ export default function Sale() {
 
   useEffect(() => {
     dispatch(setSkeleton(true));
-    axios.get(`https://65707bc209586eff66417bbf.mockapi.io/item?${saleUrl}&${categoryUrl}`).then((res) => {
+    axios.get(`https://657f17219d10ccb465d5edfb.mockapi.io/items?${saleUrl}&${categoryUrl}`).then((res) => {
       setTimeout(() => {
         dispatch(setSkeleton(false));
       }, "1000");
@@ -63,10 +63,10 @@ export default function Sale() {
               item
                 .filter(el => el.title.includes(query))
                 .map((obj, index) => (
-                  <Link key={index} to="/view">
+                  <Link key={index} to={`/category/${obj.id}`}>
                     <Product
                       key={obj.id}
-                      img={obj.img}
+                      img={obj.imgFront}
                       title={obj.title}
                       price={obj.price}
                       discount={obj.discount}
