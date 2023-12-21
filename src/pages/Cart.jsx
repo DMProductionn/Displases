@@ -11,7 +11,6 @@ import {
 } from "../components/redux/Slices/Cart";
 
 export default function Cart() {
-    const some = 'abc'
     const dispatch = useDispatch();
     const { cart } = useSelector(state => state.Cart);
     console.log(cart);
@@ -34,9 +33,6 @@ export default function Cart() {
     return (
       <>
         {content}
-        <button onClick={() => dispatch(removeAll())}>Clear</button>
-        <button onClick={() => dispatch(add(some))}>Add 1</button>
-        <button onClick={() => dispatch(remove(some))}>Remove 1</button>
       </>
     )
 }
