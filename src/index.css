@@ -46,7 +46,17 @@ body::-ms-scrollbar-thumb {
   background-color: #fff;
   border-radius: 20px;
 }
-
+input[type=submit] {
+  width: calc(100% - 60px);
+  background-color: #333;
+  border-radius: 6px;
+  padding: 12px;
+  align-self: center;
+  font-size: 12px;
+}
+input[type=submit]:hover {
+  background-color: #222;
+}
 html{
   box-sizing: border-box;                               
 }

@@ -1,7 +1,27 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
+
 import style from './SignUp.module.css'
+import axios from 'axios'
+
 
 export default function Index() {
+    const navigate = useNavigate()
+
+    const {
+        register,
+        formState: {
+            errors,
+        },
+        handleSubmit
+    } = useForm({
+        mode: 'onBlur'
+    })
+
+    const onSubmit = (data) => {
+        console.log(data)
+        navigate('/category')
+    }
     return (
         <div className={style.wrapper}>
             {/* Кнопка выйти */}
@@ -19,26 +39,57 @@ export default function Index() {
             </div>
 
             {/* Форма регистрации */}
-            <form className='w-[100%] flex flex-col flex-nowrap'>
+            <form onSubmit={handleSubmit(onSubmit)} className='w-[100%] flex flex-col flex-nowrap' method='post' action='https://657f17219d10ccb465d5edfb.mockapi.io/users'>
                 <div className={style.info}>
                     <label className='w-[100%]'>
                         <h3 className='font-[700] mb-[5px]'>Email</h3>
-                        <input type="email" name="" id="" className={style.input}/>
+                        <input
+                            type="email"
+                            {...register(
+                                'email',
+                                {
+                                    required: '❗️Обязательное поле'
+                                }
+                            )}
+                            className={style.input} />
+                        {errors?.email && <p className='mt-[10px]'>{errors?.email.message || '❗️Ошибка'}</p>}
                     </label>
                     <label className='w-[100%]'>
                         <h3 className='font-[700] mb-[5px]'>Password</h3>
-                        <input type="password" name="" id="" className={style.input}/>
+                        <input
+                            type="password"
+                            {...register(
+                                'password', {
+                                required: '❗️Обязательное поле',
+                                minLength: {
+                                    value: 6,
+                                    message: 'Минимальная длина пароля - 6 символов'
+                                }
+                            }
+                            )}
+                            className={style.input} />
+                        {errors?.password && <p className='mt-[10px]'>{errors?.password.message || '❗️Ошибка'}</p>}
                     </label>
                     <label className='w-[100%]'>
                         <h3 className='font-[700] mb-[5px]'>Repeat Password</h3>
-                        <input type="password" name="" id="" className={style.input}/>
+                        <input
+                            type="password"
+                            className={style.input} 
+                            name='passwordRepeat'/>
                     </label>
                     <label className='w-[100%]'>
                         <h3 className='font-[700] mb-[5px]'>Country
                             <span className='inline text-[#ff0000] float-none'>*</span>
                         </h3>
-                        <select id="country" name="country" className='bg-[#111] w-[100%] h-[4.5vh] py-[4px] px-[8px] rounded-[6px] appearance-none'>
-                            <option>Choose your country</option>
+                        <select
+                            {...register(
+                                'country',
+                                {
+                                    required: '❗️Обязательное поле'
+                                }
+                            )}
+                            className='bg-[#111] w-[100%] h-[4.5vh] py-[4px] px-[8px] rounded-[6px] appearance-none'>
+                            <option value="">Choose your country</option>
                             <option value="Belarus">Belarus 🇧🇾</option>
                             <option value="Russian Federation">Russian Federation 🇷🇺</option>
                             <option value="Ukraine">Ukraine 🇺🇦</option>
@@ -46,18 +97,23 @@ export default function Index() {
                         </select>
                     </label>
                     <label className='w-[100%]'>
-                        <h3 className='font-[700] mb-[5px]'>Postal Code
+                        <h3 className='font-[700] mb-[5px]'>
+                            Postal Code
                             <span className='inline text-[#ff0000] float-none'>*</span>
                         </h3>
-                        <input type="text" name="" id="" className={style.input}/>
+                        <input
+                            {...register('postalCode', {
+                                required: '❗️Обязательное поле'
+                            })}
+                            className={style.input}
+                        />
+                        {errors?.postalCode && <p className='mt-[10px]'>{errors?.postalCode.message || '❗️Ошибка'}</p>}
                     </label>
                 </div>
 
                 <hr className='border border-solid border-[#333232] my-[18px]' />
 
-                <button className={style.button}>
-                    <Link to='/category'>JOIN</Link>
-                </button>
+                <input type='submit' value='JOIN' />
             </form>
         </div>
     )

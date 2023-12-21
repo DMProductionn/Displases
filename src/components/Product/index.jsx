@@ -5,7 +5,7 @@ export default function Product({ img, title, price, discount}) {
       <img
         className="mb-[12px] mx-auto h-[170px]"
         src={img}
-        alt="xydi"
+        alt="Товар"
       />
       <div className="flex flex-col items-start">
         <div className="mb-[8px]">

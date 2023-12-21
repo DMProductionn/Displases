@@ -49,7 +49,7 @@ export default function BannerSale() {
             <img
               width={160}
               height={140}
-              src="./img/Clothes/Hoodies/Hoodie-gray-front.webp"
+              src="/public/img/Clothes/Hoodies/Hoodie-gray-front.webp"
               alt=""
             />
             <div className="p-[15px] pt-[6px]">
@@ -62,12 +62,12 @@ export default function BannerSale() {
           </div>
         </Link>
         <div className="mb-[20px] flex justify-center items-center">
-          <Link to='/sale'>
-          <button
-          onClick={addTrueSale}
-            className={`uppercase absolute bottom-[25px] z-[15] cursor-pointer bg-[#333232] w-[103px] py-[8px] rounded-[6px] text-[12px] ${style.btn}`}>
+          <Link
+            to='/sale'
+            onClick={addTrueSale} 
+            className='uppercase absolute z-[15] bottom-[25px] cursor-pointer bg-[#333232] w-[103px] py-[8px] rounded-[6px] text-[12px] font-[700] flex justify-center items-center'
+          >
             MORE
-          </button>
           </Link>
         </div>
         <img

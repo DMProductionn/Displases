@@ -7,7 +7,7 @@
 }
 
 .mainBlock {
-  background-image: url('./img/Clothes/Hoodies/Hoodie-gray-main-half.webp'); 
+  background-image: url('/public/img/Clothes/Hoodies/Hoodie-gray-main-half.webp'); 
   background-size: 340px 600px;
   background-repeat: no-repeat;
   background-position: 0;
