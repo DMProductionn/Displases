@@ -2,10 +2,15 @@ import BackBtn from '../../Buttons/BackBtn';
 import CartItem from './CartItem';
 
 import { removeAll } from '../../redux/Slices/Cart';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 export default function SeveralProducts() {
   const dispatch = useDispatch()
+  const { cart } = useSelector(state => state.Cart)
+  console.log(cart);
+  let quantity;
   
   return (
     <div className="bg-gray-main rounded-[6px] p-[20px] w-full">
@@ -19,14 +24,21 @@ export default function SeveralProducts() {
         <div className='w-[103px] h-auto'></div>
       </div>
       <div className="flex flex-col gap-[10px] mt-[15px]">
-        <CartItem />
-        <CartItem />
-        <CartItem />
+        {
+          // cart.map(el => (
+            // <Link to={`/category/${el}`} key={el}>
+              // <CartItem id={el} key={el}/>
+            // </Link>
+          // ))
+          Object.keys(cart).map(el => (
+            <CartItem id={el} quantity={cart[el]} key={el}/>
+          ))
+        }
       </div>
       <div className="flex flex-nowrap flex-col p-[20px] gap-[15px]">
-        <p className='text-white text-[16px] font-[400] leading-[125%]'>Итого: 4 товара</p>
+        <p className='text-white text-[16px] font-[400] leading-[125%]'>Итого: {cart.length} товара</p>
         <div className="flex flex-col gap-[5px] justify-center">
-          <p className='text-white text-[16px] font-[400] leading-[125%]'>12&nbsp;300₽</p>
+          <p className='text-white text-[16px] font-[400] leading-[125%]'>₽</p>
           <p className='text-[#929192] text-[12px] font-[400] leading-[110%] line-through'>15&nbsp;500₽</p>
         </div>
       </div>

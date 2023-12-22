@@ -65,8 +65,8 @@ export default function ViewProduct() {
                   </div>
                   <div className="flex gap-[20px]">
                     <SizeBtn />
-                    <Link to='/cart' onClick={() => dispatch(add())} className="bg-[#F64343] w-full max-w-[237px] text-[14px] font-[700] rounded-[6px] flex justify-center">
-                      <button onClick={ () => dispatch(add(id))}>
+                    <Link to='/cart' onClick={() => dispatch(add(id))} className="bg-[#F64343] w-full max-w-[237px] text-[14px] font-[700] rounded-[6px] flex justify-center">
+                      <button>
                         ADD TO CART
                       </button>
                     </Link>
