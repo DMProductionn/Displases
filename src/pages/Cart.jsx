@@ -13,6 +13,8 @@ import {
 export default function Cart() {
     const dispatch = useDispatch();
     const { cart } = useSelector(state => state.Cart);
+    const length = Object.keys(cart).length
+    console.log(length);
     console.log(cart);
 
     const [content, setContent] = useState(null);
@@ -21,11 +23,11 @@ export default function Cart() {
 
     // Проверка на кол-во эл-ов в корзине
     useEffect(() => {
-        if (!cart.length) {
+        if (!length) {
             setContent(<ClearCart />);
-        } else if (cart.length === 1) {
+        } else if (length === 1) {
             setContent(<OneProductCart />);
-        } else if (cart.length > 1) {
+        } else if (length > 1) {
             setContent(<SeveralProducts />);
         }
     }, [cart]);

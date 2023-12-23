@@ -1,11 +1,27 @@
 import style from './OneProductCart.module.css';
 import BackBtn from '../../Buttons/BackBtn';
 
-import { removeAll } from '../../redux/Slices/Cart';
-import { useDispatch } from 'react-redux';
+import { plus, removeAll } from '../../redux/Slices/Cart';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 export default function OneProductCart() {
   const dispatch = useDispatch()
+  const { cart } = useSelector(state => state.Cart)
+  const element = Object.keys(cart)[0]
+  const quantity = cart[element]
+  const [ item, setItem ] = useState('')
+
+  const price = item.price * quantity
+  const discount = item.discount * quantity
+
+  useEffect(() => {
+    axios
+      .get(`https://657f17219d10ccb465d5edfb.mockapi.io/items/${element}`)
+      .then(resolve => setItem(resolve.data))
+      .catch(console.error)
+  }, [])
 
   return (
     <div className="bg-gray-main rounded-[6px] p-[20px]">
@@ -23,7 +39,7 @@ export default function OneProductCart() {
           className={`${style.hoodieBig} flex justify-center border-[1px] border-gray-light w-full max-w-[820px] mb-[12px] rounded-[6px] h-[480px]`}>
           <img
             className="p-[20px]"
-            src="./img/Clothes/Hoodies/Hoodie-gray-front.webp"
+            src={item.imgFront}
             alt="hoodie"
           />
         </div>
@@ -32,7 +48,7 @@ export default function OneProductCart() {
             className={`${style.hoodieSmallBlock} p-[20px] w-[300px] h-[235px] border-[1px] border-gray-light rounded-[6px] flex justify-center`}>
             <img
               className={`${style.hoodieSmall} h-[200px]`}
-              src="./img/Clothes/Hoodies/Hoodie-gray-front.webp"
+              src={item.imgFront}
               alt="hoodie"
             />
           </div>
@@ -40,7 +56,7 @@ export default function OneProductCart() {
             className={`${style.hoodieSmallBlock} p-[20px] w-[300px] h-[235px] border-[1px] border-gray-light rounded-[6px] flex justify-center`}>
             <img
               className={`${style.hoodieSmall} ${style.hoodieSmall} h-[200px]`}
-              src="./img/Clothes/Hoodies/Hoodie-gray-back.webp"
+              src={item.imgBack}
               alt="hoodie"
             />
           </div>
@@ -50,21 +66,21 @@ export default function OneProductCart() {
         <p className="text-[24px] 3sm:text-[30px] font-[700] leading-[125%]">DISPLASES Hoodie</p>
         <div className="flex gap-[25px] items-center mb-[25px] flex-wrap">
           <p className="text-[24px] 3sm:text-[30px] font-[700] leading-[125%]">
-            I DONT CARE in Gray <span>(L)</span>
+            {item.title} <span>(L)</span>
           </p>
           <div className="flex gap-[10px] items-center flex-wrap">
             <p className="text-[22px] leading-[100%]">
-              Количество: <span>1</span>
+              Количество: <span>{quantity}</span>
             </p>
-            <button className="w-[16px] h-[16px]">
+            <button className="w-[16px] h-[16px]" onClick={() => dispatch(plus(element))}>
               <img src="./img/icons/caret-square.svg" alt="caret" />
             </button>
           </div>
           <p className="text-[#F64343] text-[22px] leading-[99%]">-20%</p>
         </div>
         <div className="flex mb-[20px] gap-[8px]">
-          <p className="text-[22px] leading-[110%]">12 300р</p>
-          <p className="text-[#717171] line-through text-[22px] leading-[110%]">15 500р</p>
+          <p className="text-[22px] leading-[110%]">{price}р</p>
+          <p className="text-[#717171] line-through text-[22px] leading-[110%]">{discount}р</p>
         </div>
         <div className="flex gap-[10px]">
           <button className="uppercase bg-red w-full h-[40px] text-[10px] 3sm:text-[14px] font-[700] rounded-[6px] flex justify-center items-center">

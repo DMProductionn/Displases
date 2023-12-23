@@ -1,26 +1,20 @@
-import React from 'react';
 import './index.module.css';
-import { useDispatch } from 'react-redux';
-import { remove } from '../../../redux/Slices/Cart';
-import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { remove, plus } from '../../../redux/Slices/Cart';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
-export default function CartItem() {
-  const { id } = useParams()
-  // Система:
-  // <div>
-  //   <info>
-  //     <el>
-  //       <img />
-  //       <title />
-  //       <quantity />
+export default function CartItem({id, quantity}) {
+  const { cart } = useSelector(state => state.Cart)
+  const [item, setItem] = useState('')
 
-  //     </el>
-  //     <price>
+  useEffect(() => {
+    axios
+      .get(`https://657f17219d10ccb465d5edfb.mockapi.io/items/${id}`)
+      .then(resolve => setItem(resolve.data))
+      .catch(console.error)
+  }, [id])
 
-  //     </price>
-  //   </info>
-  //   <cart />
-  // </div>
   const dispatch = useDispatch()
   return (
 
@@ -31,19 +25,19 @@ export default function CartItem() {
           <img
             width={100}
             height={90}
-            src="./img/Clothes/Hoodies/Hoodie-gray-front.webp"
+            src={item.imgFront}
             alt="hoodie"
           />
         
           <div className="flex items-start flex-col min-w-[160px]">
             <div className="">
-              <p className='text-white text-[16px] font-[400] uppercase leading-[125%]'>DISPLASES Longsleeve <br /> SHTRIH in Black</p>
+              <p className='text-white text-[16px] font-[400] uppercase leading-[125%]'>DISPLASES Longsleeve <br /> {item.title}</p>
               <p className='text-[#F64343] text-[16px] font-[700] leading-[125%]'>-20%</p>
             </div>
           </div>
           <div className="flex gap-[10px]">
-            <p className='text-white text-[16px] font-[400] leading-[125%]'>Количество: 1</p>
-            <button>
+            <p className='text-white text-[16px] font-[400] leading-[125%]'>Количество: {quantity}</p>
+            <button onClick={() => dispatch(plus(id))}>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M15 14C15 14.5523 14.5523 15 14 15L2 15C1.44772 15 0.999999 14.5523 0.999999 14L1 2C1 1.44771 1.44772 0.999999 2 0.999999L14 1C14.5523 1 15 1.44772 15 2L15 14ZM16 2C16 0.895431 15.1046 -3.91405e-08 14 -8.74228e-08L2 -6.11959e-07C0.895431 -6.60242e-07 -3.91405e-08 0.89543 -8.74228e-08 2L-6.11959e-07 14C-6.60242e-07 15.1046 0.89543 16 2 16L14 16C15.1046 16 16 15.1046 16 14L16 2Z" fill="white" />
                 <path d="M3.54389 10.2048C3.62455 10.3844 3.80311 10.5 4.00001 10.5L12 10.5C12.1969 10.5 12.3755 10.3844 12.4561 10.2048C12.5368 10.0252 12.5045 9.81498 12.3737 9.66782L8.37371 5.16782C8.27883 5.06107 8.14283 5 8.00001 5C7.85719 5 7.72119 5.06107 7.6263 5.16782L3.6263 9.66782C3.49549 9.81498 3.46323 10.0252 3.54389 10.2048Z" fill="white" />
@@ -52,8 +46,8 @@ export default function CartItem() {
           </div>
         </div>
         <div className="flex flex-col gap-[5px] justify-center"> {/* Цена  */}
-          <p className='text-white text-right text-[16px] font-[400] leading-[125%]'>12&nbsp;300₽</p>
-          <p className='text-[#717171] text-right text-[12px] font-[400] leading-[110%] line-through'>15&nbsp;500₽</p>
+          <p className='text-white text-right text-[16px] font-[400] leading-[125%]'>{item.price}₽</p>
+          <p className='text-[#717171] text-right text-[12px] font-[400] leading-[110%] line-through'>{item.discount}₽</p>
         </div>
       </div>
       {/* Корзина */}
