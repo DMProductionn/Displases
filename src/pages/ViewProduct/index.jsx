@@ -3,8 +3,8 @@ import { Link, useParams } from 'react-router-dom';
 
 import BackBtn from '../../components/Buttons/BackBtn';
 import SizeBtn from '../../components/Buttons/SizeBtn';
-
-import { useDispatch } from 'react-redux';
+import Select from 'react-select';
+import { useDispatch, useSelector } from 'react-redux';
 import { add } from '../../components/redux/Slices/Cart';
 
 import axios from 'axios';
@@ -13,6 +13,30 @@ export default function ViewProduct() {
   const dispatch = useDispatch()
   const { id } = useParams()
   const [item, setItem] = useState('')
+  const [size, setSize] = useState('')
+
+  // const { size } = useSelector(state => state.Size)
+
+  // const [selectedOption, setSelectedOption] = useState('');
+
+  const handleChange = (e) => {
+    // setSelectedOption(el)
+    setSize(e.value)
+    
+  }
+
+  const options = [
+    { value: 'S', label: 'S' },
+    { value: 'M', label: 'M' },
+    { value: 'L', label: 'L' },
+    { value: 'XL', label: 'XL' },
+    { value: 'XXL', label: 'XXL' },
+  ]
+  const object = {
+    id: id,
+    quantity: 1,
+    size: size,
+  }
 
   useEffect(() => {
     axios
@@ -20,7 +44,6 @@ export default function ViewProduct() {
       .then(resolve => setItem(resolve.data))
       .catch(console.error)
   }, [id])
-
 
   return (
     <>
@@ -64,8 +87,17 @@ export default function ViewProduct() {
                     <p className="text-[#717171] line-through text-[22px] leading-[110%]">{item.discount}₽</p>
                   </div>
                   <div className="flex gap-[20px]">
-                    <SizeBtn />
-                    <Link to='/cart' onClick={() => dispatch(add(id))} className="bg-[#F64343] w-full max-w-[237px] text-[14px] font-[700] rounded-[6px] flex justify-center">
+
+                    <Select
+                      options={options}
+                      onChange={handleChange}
+                      className='select-container'
+                      classNamePrefix='select'
+                      placeholder='РАЗМЕР'
+                      isSearchable={false}
+                    />
+
+                    <Link to='/cart' onClick={() => dispatch(add(object))} className="bg-[#F64343] w-full  text-[14px] font-[700] rounded-[6px] flex justify-center">
                       <button>
                         ADD TO CART
                       </button>
@@ -83,8 +115,9 @@ export default function ViewProduct() {
                       <p className='text-[12px]'>Указания по стирке: стирать на 30 градусах</p>
                       <p className='text-[12px]'>Указания по размерам:</p>
                       <p className='text-[12px]'>S - рост 165-170см</p>
-                      <p className='text-[12px]'>М - рост 170-180смL - рост 180-185см</p>
-                      <p className='text-[12px]'>L - рост 185+см</p>
+                      <p className='text-[12px]'>М - рост 170-180см</p>
+                      <p className='text-[12px]'>L - рост 180-185см</p>
+                      <p className='text-[12px]'>XL - рост 185+см</p>
                       <p className='text-[12px]'>XXL - рост 190+см</p>
                     </div>
                   </div>

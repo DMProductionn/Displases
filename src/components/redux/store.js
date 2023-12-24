@@ -11,14 +11,14 @@ import {
 import storage from 'redux-persist/lib/storage';
 
 import Filter from './Slices/Filter'
-import Size  from './Slices/Size.slice'
 import Category from '../redux/Slices/Category'
 import Cart from './Slices/Cart'
+// import Size from './Slices/Size';
 
 
 const rootReducer = combineReducers({
     Filter,
-    Size,
+    // Size,
     Category,
     Cart,
 }) 

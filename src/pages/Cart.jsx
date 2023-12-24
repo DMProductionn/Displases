@@ -14,13 +14,10 @@ export default function Cart() {
     const dispatch = useDispatch();
     const { cart } = useSelector(state => state.Cart);
     const length = Object.keys(cart).length
-    console.log(length);
-    console.log(cart);
 
     const [content, setContent] = useState(null);
 
-
-
+    console.log(cart);
     // Проверка на кол-во эл-ов в корзине
     useEffect(() => {
         if (!length) {

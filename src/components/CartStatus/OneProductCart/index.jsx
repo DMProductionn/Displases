@@ -9,16 +9,24 @@ import axios from 'axios';
 export default function OneProductCart() {
   const dispatch = useDispatch()
   const { cart } = useSelector(state => state.Cart)
-  const element = Object.keys(cart)[0]
-  const quantity = cart[element]
-  const [ item, setItem ] = useState('')
 
+  const object = cart[0]
+  const keys = Object.keys(object)
+
+  const id = object[keys[0]]
+  const quantity = object[keys[1]]
+  const size = object[keys[2]]
+
+  const [ item, setItem ] = useState('')
+  
   const price = item.price * quantity
   const discount = item.discount * quantity
 
+  // const { size } = useSelector(state => state.Size)
+
   useEffect(() => {
     axios
-      .get(`https://657f17219d10ccb465d5edfb.mockapi.io/items/${element}`)
+      .get(`https://657f17219d10ccb465d5edfb.mockapi.io/items/${id}`)
       .then(resolve => setItem(resolve.data))
       .catch(console.error)
   }, [])
@@ -66,7 +74,7 @@ export default function OneProductCart() {
         <p className="text-[24px] 3sm:text-[30px] font-[700] leading-[125%]">DISPLASES Hoodie</p>
         <div className="flex gap-[25px] items-center mb-[25px] flex-wrap">
           <p className="text-[24px] 3sm:text-[30px] font-[700] leading-[125%]">
-            {item.title} <span>(L)</span>
+            {item.title} <span>({size})</span>
           </p>
           <div className="flex gap-[10px] items-center flex-wrap">
             <p className="text-[22px] leading-[100%]">
