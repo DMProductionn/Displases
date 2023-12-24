@@ -9,9 +9,7 @@ import { useState } from 'react';
 export default function SeveralProducts() {
   const dispatch = useDispatch()
   const { cart } = useSelector(state => state.Cart)
-  console.log(cart);
-  let quantity;
-  
+
   return (
     <div className="bg-gray-main rounded-[6px] p-[20px] w-full">
       <div className="flex flex-wrap justify-between gap-[10px]">
@@ -25,13 +23,8 @@ export default function SeveralProducts() {
       </div>
       <div className="flex flex-col gap-[10px] mt-[15px]">
         {
-          // cart.map(el => (
-            // <Link to={`/category/${el}`} key={el}>
-              // <CartItem id={el} key={el}/>
-            // </Link>
-          // ))
-          Object.keys(cart).map(el => (
-            <CartItem id={el} quantity={cart[el]} key={el}/>
+          cart.map(el => (
+              <CartItem {...el} key={el.id}/>
           ))
         }
       </div>

@@ -1,15 +1,15 @@
 // import { createSlice } from '@reduxjs/toolkit'
 
 // const initialState = {
-//   sizeBtn: false,
+//   size: ''
 // }
 
 // export const Size = createSlice({
 //   name: 'Size',
 //   initialState,
 //   reducers: {
-//     setSize: (state) => {
-//       state.sizeBtn = !state.sizeBtn
+//     setSize: (state, action) => {
+//         state.size = action.payload
 //     }
 //   },
 // })
